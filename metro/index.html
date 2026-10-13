@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +20,10 @@
       padding: 0;
     }
 
+    html {
+      min-height: 100%;
+    }
+
     body {
       min-height: 100vh;
       display: flex;
@@ -27,14 +32,22 @@
       padding: 20px;
       font-family: Arial, Tahoma, sans-serif;
       color: #fff;
+
+      /* Background image */
       background:
-        radial-gradient(circle at top, #343434 0%, transparent 45%),
-        linear-gradient(135deg, #080808, #191919, #080808);
+        linear-gradient(
+          rgba(0, 0, 0, 0.52),
+          rgba(0, 0, 0, 0.72)
+        ),
+        url("./mb.png") center center / cover no-repeat fixed;
+
+      background-color: #080808;
     }
+
+    /* OFFER CARD */
 
     .offer-card {
       width: min(100%, 520px);
-      min-height: 520px;
       position: relative;
       overflow: hidden;
       display: flex;
@@ -45,10 +58,17 @@
       padding: 38px 28px;
       border: 1px solid rgba(221, 184, 112, .65);
       border-radius: 26px;
+
       background:
-        radial-gradient(circle at 50% 0%, rgba(211, 165, 82, .18), transparent 48%),
-        linear-gradient(145deg, #202020, #0b0b0b 72%);
+        linear-gradient(
+          145deg,
+          rgba(25, 25, 25, .94),
+          rgba(8, 8, 8, .94)
+        );
+
       box-shadow: 0 25px 70px rgba(0, 0, 0, .55);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
     }
 
     .offer-card::before {
@@ -66,6 +86,8 @@
       width: 100%;
     }
 
+    /* TOP LABEL */
+
     .tag {
       display: inline-block;
       padding: 8px 17px;
@@ -77,6 +99,8 @@
       margin-bottom: 23px;
     }
 
+    /* BRAND */
+
     .brand {
       font-size: 17px;
       letter-spacing: 3px;
@@ -85,6 +109,8 @@
       margin-bottom: 16px;
       direction: ltr;
     }
+
+    /* HEADLINE */
 
     h1 {
       font-size: clamp(32px, 7vw, 45px);
@@ -104,6 +130,8 @@
       font-size: 15px;
       line-height: 1.9;
     }
+
+    /* DISCOUNT */
 
     .discount {
       display: inline-flex;
@@ -128,6 +156,8 @@
       line-height: 1.6;
     }
 
+    /* COUPON */
+
     .coupon-label {
       color: #c8c2b7;
       font-size: 13px;
@@ -143,7 +173,7 @@
       padding: 15px 10px;
       border: 1px dashed #d9b36a;
       border-radius: 12px;
-      background: rgba(255,255,255,.055);
+      background: rgba(255, 255, 255, .07);
       color: #f4d99f;
       font-size: clamp(14px, 4vw, 20px);
       font-weight: 900;
@@ -152,6 +182,8 @@
       margin-bottom: 13px;
       user-select: all;
     }
+
+    /* ACTION BUTTON */
 
     .action-button {
       width: 100%;
@@ -186,6 +218,8 @@
       line-height: 1.6;
     }
 
+    /* COUNTDOWN */
+
     .timer-heading {
       color: #c8c2b7;
       font-size: 12px;
@@ -204,8 +238,8 @@
       min-width: 64px;
       padding: 10px 8px;
       border-radius: 10px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.09);
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .09);
     }
 
     .number {
@@ -229,18 +263,20 @@
 
     .footer {
       margin-top: 22px;
-      color: #8d887f;
+      color: #b2aca1;
       font-size: 10px;
       line-height: 1.8;
     }
 
-    @media (max-width: 420px) {
+    /* MOBILE */
+
+    @media (max-width: 600px) {
       body {
         padding: 12px;
+        background-attachment: scroll;
       }
 
       .offer-card {
-        min-height: 0;
         padding: 32px 20px;
         border-radius: 21px;
       }
@@ -264,7 +300,9 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
+      *,
+      *::before,
+      *::after {
         transition: none !important;
       }
     }
@@ -272,12 +310,17 @@
 </head>
 
 <body>
+
   <main class="offer-card">
     <div class="content">
 
-      <div class="tag">عرض خاص للسعودية 🇸🇦</div>
+      <div class="tag">
+        عرض خاص للسعودية 🇸🇦
+      </div>
 
-      <div class="brand">METRO BRAZIL</div>
+      <div class="brand">
+        METRO BRAZIL
+      </div>
 
       <h1>
         تسوّق واستمتع<br>
@@ -291,10 +334,15 @@
 
       <div class="discount">
         <strong>10%</strong>
-        <span>خصم على مشترياتك<br>باستخدام الكود</span>
+        <span>
+          خصم على مشترياتك<br>
+          باستخدام الكود
+        </span>
       </div>
 
-      <div class="coupon-label">كود الخصم الخاص بك</div>
+      <div class="coupon-label">
+        كود الخصم الخاص بك
+      </div>
 
       <div class="coupon" id="couponCode">
         MEDIAMUDRA390
@@ -320,6 +368,7 @@
       </div>
 
       <div class="timer" aria-label="الوقت المتبقي">
+
         <div class="time-box">
           <div class="number" id="hours">02</div>
           <div class="unit">ساعة</div>
@@ -338,6 +387,7 @@
           <div class="number" id="seconds">00</div>
           <div class="unit">ثانية</div>
         </div>
+
       </div>
 
       <div class="footer">
@@ -348,9 +398,9 @@
     </div>
   </main>
 
-  <script>
-    /* CAMPAIGN SETTINGS */
+  <!-- JAVASCRIPT: COPY BUTTON + REDIRECT + TIMER -->
 
+  <script>
     const DESTINATION =
       "https://metrobrazil.com/mediamudra";
 
@@ -371,8 +421,7 @@
 
     let redirectStarted = false;
 
-
-    /* COPY COUPON */
+    /* COPY COUPON CODE */
 
     async function copyCoupon() {
       if (navigator.clipboard && window.isSecureContext) {
@@ -388,7 +437,6 @@
       textarea.style.left = "-9999px";
 
       document.body.appendChild(textarea);
-
       textarea.select();
 
       let copied = false;
@@ -404,14 +452,12 @@
       return copied;
     }
 
-
-    /* ACTION BUTTON: COPY + REDIRECT */
+    /* COPY CODE AND OPEN CAMPAIGN URL */
 
     button.addEventListener("click", async () => {
       if (redirectStarted) return;
 
       redirectStarted = true;
-
       button.disabled = true;
       button.textContent = "جاري تجهيز التحويل...";
 
@@ -431,14 +477,8 @@
           "تعذر النسخ تلقائياً. يمكنك نسخ الكود يدوياً.";
       }
 
-      /*
-       * Redirect to the campaign destination
-       * even if clipboard access is unavailable.
-       */
-
       window.location.assign(DESTINATION);
     });
-
 
     /* COUNTDOWN TIMER */
 
@@ -461,9 +501,6 @@
     }
 
     let timerEnd = getTimerEnd();
-
-
-    /* UPDATE TIMER DISPLAY */
 
     function updateTimer() {
       const remaining = Math.max(
@@ -494,9 +531,8 @@
     }
 
     updateTimer();
-
     setInterval(updateTimer, 1000);
   </script>
+
 </body>
 </html>
-```
