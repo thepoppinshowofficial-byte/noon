@@ -1,0 +1,255 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#241b20">
+
+  <title>خصم 3% مع كود LM77 | دار الأميرات</title>
+  <meta name="description" content="استخدم كود LM77 للحصول على خصم 3% على مشترياتك من دار الأميرات.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 24px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Tahoma, Arial, sans-serif;
+      color: #fff;
+      background:
+        linear-gradient(rgba(25, 15, 22, .60), rgba(25, 15, 22, .78)),
+        url("./daralamirat.png") center center / cover no-repeat fixed;
+      background-color: #241b20;
+    }
+
+    .offer-card {
+      width: 100%;
+      max-width: 440px;
+      padding: 34px 25px;
+      text-align: center;
+      border: 1px solid rgba(244, 205, 173, .8);
+      border-radius: 24px;
+      background: linear-gradient(
+        145deg,
+        rgba(58, 38, 49, .97),
+        rgba(30, 22, 28, .98)
+      );
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .4);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: #f4cdae;
+      font-size: 14px;
+    }
+
+    .brand {
+      margin: 0 0 20px;
+      font-size: 29px;
+      font-weight: 800;
+      color: #fff0e5;
+    }
+
+    .discount {
+      margin: 0;
+      color: #f4cdae;
+      font-size: 66px;
+      line-height: 1.15;
+      font-weight: 900;
+    }
+
+    .discount-label {
+      margin: 8px 0 18px;
+      font-size: 21px;
+      font-weight: 700;
+    }
+
+    .description {
+      margin: 0 auto 24px;
+      max-width: 330px;
+      color: #f0e5eb;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .coupon-label {
+      margin-bottom: 10px;
+      color: #e8d8df;
+      font-size: 14px;
+    }
+
+    .coupon-code {
+      display: block;
+      padding: 15px 12px;
+      margin-bottom: 17px;
+      border: 2px dashed #f4cdae;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .06);
+      color: #fff;
+      font-size: 27px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      direction: ltr;
+      user-select: all;
+    }
+
+    .cta-button {
+      width: 100%;
+      min-height: 54px;
+      padding: 14px 18px;
+      border: 0;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #f6d5b9, #d9a77f);
+      color: #2b1c22;
+      font-family: inherit;
+      font-size: 17px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .2s, filter .2s;
+    }
+
+    .cta-button:hover {
+      filter: brightness(1.06);
+      transform: translateY(-2px);
+    }
+
+    .cta-button:disabled {
+      cursor: wait;
+      opacity: .8;
+    }
+
+    .status {
+      min-height: 24px;
+      margin: 12px 0 0;
+      color: #f4cdae;
+      font-size: 13px;
+    }
+
+    .disclaimer {
+      margin: 20px 0 0;
+      color: #d5c6cd;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .footer {
+      margin-top: 18px;
+      color: #cdbdc5;
+      font-size: 11px;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 16px 12px;
+        background-attachment: scroll;
+      }
+
+      .offer-card {
+        padding: 28px 20px;
+      }
+
+      .brand {
+        font-size: 25px;
+      }
+
+      .discount {
+        font-size: 58px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="offer-card">
+    <p class="eyebrow">عرض تسوق مميز</p>
+
+    <h1 class="brand">دار الأميرات</h1>
+
+    <p class="discount">3%</p>
+    <p class="discount-label">خصم على مشترياتك</p>
+
+    <p class="description">
+      اكتشفي منتجاتك المفضلة واستخدمي كود الخصم
+      عند التسوق عبر المتجر.
+    </p>
+
+    <div class="coupon-label">كود الخصم الخاص بك</div>
+
+    <div class="coupon-code" id="couponCode">LM77</div>
+
+    <button class="cta-button" id="offerButton" type="button">
+      نسخ الكود والذهاب للمتجر
+    </button>
+
+    <p class="status" id="statusMessage" aria-live="polite"></p>
+
+    <p class="disclaimer">
+      يُرجى مراجعة شروط الكود وصلاحيته على المتجر قبل إتمام الطلب.
+    </p>
+
+    <div class="footer">
+      © دار الأميرات
+    </div>
+  </main>
+
+  <script>
+    const COUPON_CODE = "LM77";
+    const STORE_URL = "https://daralamirat.com.sa/ar";
+
+    const offerButton = document.getElementById("offerButton");
+    const statusMessage = document.getElementById("statusMessage");
+
+    async function copyCoupon() {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(COUPON_CODE);
+          return true;
+        }
+
+        const textArea = document.createElement("textarea");
+        textArea.value = COUPON_CODE;
+        textArea.style.position = "fixed";
+        textArea.style.opacity = "0";
+
+        document.body.appendChild(textArea);
+        textArea.select();
+
+        const copied = document.execCommand("copy");
+        textArea.remove();
+
+        return copied;
+      } catch (error) {
+        return false;
+      }
+    }
+
+    offerButton.addEventListener("click", async () => {
+      offerButton.disabled = true;
+
+      statusMessage.textContent = "جارٍ تجهيز كود الخصم...";
+
+      const copied = await copyCoupon();
+
+      if (copied) {
+        statusMessage.textContent =
+          "تم نسخ الكود LM77. جارٍ فتح المتجر...";
+      } else {
+        statusMessage.textContent =
+          "انسخ الكود LM77 يدويًا إذا لزم الأمر. جارٍ فتح المتجر...";
+      }
+
+      window.setTimeout(() => {
+        window.location.href = STORE_URL;
+      }, 700);
+    });
+  </script>
+</body>
+</html>
+```
