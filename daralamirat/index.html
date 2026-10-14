@@ -3,167 +3,253 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#241b20">
+  <meta name="theme-color" content="#160e13">
 
-  <title>خصم 3% مع كود LM77 | دار الأميرات</title>
-  <meta name="description" content="استخدم كود LM77 للحصول على خصم 3% على مشترياتك من دار الأميرات.">
+  <title>دار الأميرات | خصم 3% باستخدام كود LM77</title>
+  <meta name="description" content="تسوقي من دار الأميرات واستخدمي كود LM77 للحصول على خصم 3%، وفق شروط المتجر.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     * {
       box-sizing: border-box;
     }
 
+    :root {
+      --gold: #e9c78d;
+      --gold-light: #fff0cc;
+      --wine: #301723;
+      --cream: #fff9f0;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
-      padding: 24px 16px;
+      padding: 25px 15px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: Tahoma, Arial, sans-serif;
-      color: #fff;
+      font-family: "Cairo", Tahoma, Arial, sans-serif;
+      color: var(--cream);
       background:
-        linear-gradient(rgba(25, 15, 22, .60), rgba(25, 15, 22, .78)),
+        linear-gradient(
+          135deg,
+          rgba(19, 10, 16, .68),
+          rgba(35, 15, 26, .84)
+        ),
         url("./daralamirat.png") center center / cover no-repeat fixed;
-      background-color: #241b20;
+      background-color: #160e13;
     }
 
     .offer-card {
+      position: relative;
       width: 100%;
-      max-width: 440px;
-      padding: 32px 25px;
+      max-width: 460px;
+      padding: 32px 25px 25px;
+      overflow: hidden;
       text-align: center;
-      border: 1px solid rgba(244, 205, 173, .8);
-      border-radius: 24px;
+      border: 1px solid rgba(233, 199, 141, .8);
+      border-radius: 25px;
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(123, 66, 81, .4),
+          transparent 48%
+        ),
+        linear-gradient(150deg, #351b28, #1b1018 80%);
+      box-shadow:
+        0 25px 70px rgba(0, 0, 0, .48),
+        inset 0 0 0 5px rgba(233, 199, 141, .045);
+    }
+
+    .offer-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 12%;
+      right: 12%;
+      height: 2px;
       background: linear-gradient(
-        145deg,
-        rgba(58, 38, 49, .97),
-        rgba(30, 22, 28, .98)
+        90deg,
+        transparent,
+        var(--gold),
+        transparent
       );
-      box-shadow: 0 20px 60px rgba(0, 0, 0, .4);
+    }
+
+    .brand-symbol {
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(233, 199, 141, .8);
+      border-radius: 50%;
+      color: var(--gold-light);
+      font-size: 32px;
+      background: rgba(233, 199, 141, .07);
+      box-shadow: 0 0 25px rgba(233, 199, 141, .08);
+    }
+
+    .brand-name {
+      margin: 0;
+      color: var(--gold-light);
+      font-size: 31px;
+      font-weight: 900;
+      line-height: 1.55;
+    }
+
+    .brand-english {
+      margin: 0 0 17px;
+      color: #d9c2c8;
+      font-size: 11px;
+      letter-spacing: 3px;
+      direction: ltr;
+    }
+
+    .divider {
+      width: 95px;
+      height: 1px;
+      margin: 0 auto 20px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        transparent
+      );
     }
 
     .eyebrow {
-      margin: 0 0 12px;
-      color: #f4cdae;
+      margin: 0 0 8px;
+      color: #f4ddba;
       font-size: 14px;
-    }
-
-    .brand {
-      margin: 0 0 16px;
-      font-size: 29px;
-      font-weight: 800;
-      color: #fff0e5;
+      font-weight: 700;
     }
 
     .discount {
       margin: 0;
-      color: #f4cdae;
-      font-size: 64px;
-      line-height: 1.15;
+      color: var(--gold-light);
+      font-family: Arial, sans-serif;
+      font-size: 76px;
       font-weight: 900;
+      line-height: 1.15;
+      text-shadow: 0 5px 24px rgba(233, 199, 141, .18);
+      direction: ltr;
     }
 
     .discount-label {
-      margin: 8px 0 18px;
+      margin: 5px 0 12px;
+      color: #fff8ed;
       font-size: 21px;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .description {
+      max-width: 340px;
       margin: 0 auto 22px;
-      max-width: 330px;
-      color: #f0e5eb;
-      font-size: 15px;
-      line-height: 1.9;
+      color: #e8d9de;
+      font-size: 14px;
+      line-height: 2;
     }
 
     .timer-box {
-      margin: 0 0 22px;
-      padding: 15px 12px;
-      border: 1px solid rgba(244, 205, 173, .5);
-      border-radius: 14px;
-      background: rgba(0, 0, 0, .18);
+      margin-bottom: 21px;
+      padding: 15px 10px;
+      border: 1px solid rgba(233, 199, 141, .42);
+      border-radius: 17px;
+      background: rgba(0, 0, 0, .17);
     }
 
     .timer-heading {
-      margin: 0 0 10px;
-      color: #f4cdae;
+      margin: 0 0 12px;
+      color: var(--gold-light);
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .timer {
       display: flex;
       justify-content: center;
-      align-items: center;
-      gap: 10px;
+      gap: 9px;
       direction: ltr;
     }
 
     .time-unit {
-      min-width: 62px;
+      min-width: 70px;
       padding: 9px 5px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(233, 199, 141, .15);
+      border-radius: 11px;
+      background: rgba(255, 255, 255, .045);
     }
 
     .time-number {
       display: block;
-      color: #fff;
-      font-size: 25px;
-      line-height: 1.2;
+      color: var(--gold-light);
+      font-family: Arial, sans-serif;
+      font-size: 27px;
       font-weight: 800;
       font-variant-numeric: tabular-nums;
     }
 
     .time-label {
       display: block;
-      margin-top: 5px;
-      color: #e5cfc1;
+      margin-top: 3px;
+      color: #d9c2c8;
       font-size: 11px;
     }
 
     .timer-note {
       margin: 10px 0 0;
-      color: #d9c7d0;
-      font-size: 11px;
-      line-height: 1.7;
+      color: #cdbbc2;
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+    .coupon-panel {
+      padding: 16px;
+      border: 1px dashed rgba(233, 199, 141, .78);
+      border-radius: 15px;
+      background: linear-gradient(
+        135deg,
+        rgba(233, 199, 141, .10),
+        rgba(255, 255, 255, .025)
+      );
     }
 
     .coupon-label {
-      margin-bottom: 10px;
-      color: #e8d8df;
-      font-size: 14px;
+      margin: 0 0 8px;
+      color: #e8d9de;
+      font-size: 13px;
+      font-weight: 700;
     }
 
     .coupon-code {
-      display: block;
-      padding: 15px 12px;
-      margin-bottom: 17px;
-      border: 2px dashed #f4cdae;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, .06);
-      color: #fff;
-      font-size: 27px;
-      font-weight: 800;
-      letter-spacing: 2px;
+      margin-bottom: 15px;
+      color: var(--gold-light);
+      font-family: Arial, sans-serif;
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: 4px;
       direction: ltr;
       user-select: all;
     }
 
     .cta-button {
       width: 100%;
-      min-height: 54px;
-      padding: 14px 18px;
-      border: 0;
+      min-height: 56px;
+      padding: 14px 12px;
+      border: 1px solid #ffe8b9;
       border-radius: 12px;
-      background: linear-gradient(135deg, #f6d5b9, #d9a77f);
-      color: #2b1c22;
+      background: linear-gradient(135deg, #fff0cc, #d9b271);
+      color: #301723;
       font-family: inherit;
-      font-size: 17px;
-      font-weight: 800;
+      font-size: 16px;
+      font-weight: 900;
       cursor: pointer;
+      box-shadow: 0 7px 22px rgba(0, 0, 0, .19);
       transition: transform .2s, filter .2s;
     }
 
@@ -179,52 +265,58 @@
 
     .status {
       min-height: 24px;
-      margin: 12px 0 0;
-      color: #f4cdae;
-      font-size: 13px;
+      margin: 10px 0 0;
+      color: var(--gold-light);
+      font-size: 12px;
     }
 
     .disclaimer {
-      margin: 18px 0 0;
-      color: #d5c6cd;
-      font-size: 11px;
-      line-height: 1.8;
+      margin: 17px 0 0;
+      color: #cdbbc2;
+      font-size: 10px;
+      line-height: 1.9;
     }
 
     .footer {
-      margin-top: 18px;
-      color: #cdbdc5;
-      font-size: 11px;
+      margin-top: 15px;
+      color: #c6adb7;
+      font-size: 10px;
     }
 
     @media (max-width: 480px) {
       body {
-        padding: 16px 12px;
+        padding: 15px 10px;
         background-attachment: scroll;
       }
 
       .offer-card {
-        padding: 26px 18px;
+        padding: 27px 17px 21px;
       }
 
-      .brand {
-        font-size: 25px;
+      .brand-name {
+        font-size: 27px;
       }
 
       .discount {
-        font-size: 58px;
-      }
-
-      .timer {
-        gap: 6px;
+        font-size: 66px;
       }
 
       .time-unit {
-        min-width: 57px;
+        min-width: 63px;
       }
 
       .time-number {
-        font-size: 22px;
+        font-size: 24px;
+      }
+
+      .coupon-code {
+        font-size: 31px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cta-button {
+        transition: none;
       }
     }
   </style>
@@ -232,20 +324,27 @@
 
 <body>
   <main class="offer-card">
-    <p class="eyebrow">عرض تسوق مميز</p>
 
-    <h1 class="brand">دار الأميرات</h1>
+    <div class="brand-symbol" aria-hidden="true">✦</div>
+
+    <h1 class="brand-name">دار الأميرات</h1>
+    <p class="brand-english">DAR AL AMIRAT</p>
+
+    <div class="divider"></div>
+
+    <p class="eyebrow">عرض تسوق خاص</p>
 
     <p class="discount">3%</p>
     <p class="discount-label">خصم على مشترياتك</p>
 
     <p class="description">
-      اكتشفي منتجاتك المفضلة واستخدمي كود الخصم
-      عند التسوق عبر المتجر.
+      اكتشفي عالم دار الأميرات واستمتعي بتجربة تسوق مميزة.
+      استخدمي كود الخصم عند التسوق عبر المتجر،
+      وفق شروط العرض.
     </p>
 
-    <section class="timer-box" aria-label="الوقت المتبقي">
-      <p class="timer-heading">الوقت المتبقي لهذا العرض</p>
+    <section class="timer-box" aria-label="العد التنازلي">
+      <p class="timer-heading">العد التنازلي للعرض</p>
 
       <div class="timer">
         <div class="time-unit">
@@ -265,69 +364,75 @@
       </div>
 
       <p class="timer-note">
-        تحققي من شروط العرض وصلاحيته على المتجر.
+        تحققي من شروط الخصم وصلاحيته على المتجر.
       </p>
     </section>
 
-    <div class="coupon-label">كود الخصم الخاص بك</div>
-    <div class="coupon-code" id="couponCode">LM77</div>
+    <section class="coupon-panel" aria-label="كود الخصم">
+      <p class="coupon-label">كود خصم دار الأميرات</p>
 
-    <button class="cta-button" id="offerButton" type="button">
-      نسخ الكود والذهاب للمتجر
-    </button>
+      <div class="coupon-code" id="couponCode">LM77</div>
 
-    <p class="status" id="statusMessage" aria-live="polite"></p>
+      <button class="cta-button" id="offerButton" type="button">
+        نسخ الكود والذهاب إلى المتجر
+      </button>
+
+      <p class="status" id="statusMessage" aria-live="polite"></p>
+    </section>
 
     <p class="disclaimer">
-      يخضع الخصم لشروط المتجر ومدى صلاحية الكود.
+      يخضع الخصم لشروط المتجر وصلاحية الكود.
+      يرجى التأكد من تطبيق الخصم عند إتمام الطلب.
     </p>
 
-    <div class="footer">© دار الأميرات</div>
+    <div class="footer">دار الأميرات | DAR AL AMIRAT</div>
   </main>
 
   <script>
     const COUPON_CODE = "LM77";
     const STORE_URL = "https://daralamirat.com.sa/ar";
 
-    // Two-hour display timer per browser.
-    // Change this to a genuine offer deadline if one exists.
+    // Display timer: two hours per browser.
+    // Use a genuine campaign deadline if the offer has a fixed expiry.
     const TIMER_DURATION_MS = 2 * 60 * 60 * 1000;
     const TIMER_STORAGE_KEY = "daralamirat_lm77_timer_end";
 
     function getTimerEnd() {
       try {
-        const savedEnd = Number(localStorage.getItem(TIMER_STORAGE_KEY));
+        const savedEnd = Number(
+          localStorage.getItem(TIMER_STORAGE_KEY)
+        );
 
         if (savedEnd && savedEnd > Date.now()) {
           return savedEnd;
         }
 
         const newEnd = Date.now() + TIMER_DURATION_MS;
-        localStorage.setItem(TIMER_STORAGE_KEY, String(newEnd));
+        localStorage.setItem(
+          TIMER_STORAGE_KEY,
+          String(newEnd)
+        );
+
         return newEnd;
       } catch (error) {
         return Date.now() + TIMER_DURATION_MS;
       }
     }
 
-    let timerEnd = getTimerEnd();
+    const timerEnd = getTimerEnd();
 
     function updateTimer() {
       const remaining = Math.max(0, timerEnd - Date.now());
-
       const totalSeconds = Math.floor(remaining / 1000);
-      const hours = Math.floor(totalSeconds / 3600);
-      const minutes = Math.floor((totalSeconds % 3600) / 60);
-      const seconds = totalSeconds % 60;
 
       document.getElementById("hours").textContent =
-        String(hours).padStart(2, "0");
+        String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
 
       document.getElementById("minutes").textContent =
-        String(minutes).padStart(2, "0");
+        String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
 
       document.getElementById("seconds").textContent =
-        String(seconds).padStart(2, "0");
+        String(totalSeconds % 60).padStart(2, "0");
 
       if (remaining <= 0) {
         document.querySelector(".timer-heading").textContent =
