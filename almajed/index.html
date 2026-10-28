@@ -1,0 +1,571 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#11100e" />
+
+  <title>قسيمة الماجد للعود | خصم 30 ريال</title>
+  <meta name="description" content="استخدم كود DX8 واحصل على خصم 30 ريال عند التسوق بقيمة 300 ريال أو أكثر من الماجد للعود." />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --gold: #e4bd78;
+      --light-gold: #f7e5bb;
+      --dark: #11100e;
+      --white: #fffaf0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Tahoma, Arial, sans-serif;
+      color: var(--white);
+      background: var(--dark);
+    }
+
+    .page {
+      position: relative;
+      isolation: isolate;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(12, 11, 9, 0.48) 0%,
+          rgba(12, 11, 9, 0.72) 48%,
+          rgba(12, 11, 9, 0.96) 100%
+        ),
+        url("almajed.png") center center / cover no-repeat;
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background: radial-gradient(
+        ellipse at 50% 42%,
+        rgba(205, 157, 78, 0.15),
+        transparent 65%
+      );
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 25px 18px 10px;
+    }
+
+    .brand {
+      color: var(--light-gold);
+      font-size: clamp(25px, 4vw, 39px);
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-align: center;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.65);
+    }
+
+    .brand-subtitle {
+      margin-top: 7px;
+      color: #eee0c4;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      text-align: center;
+    }
+
+    .main {
+      width: 100%;
+      max-width: 1050px;
+      margin: auto;
+      padding: 38px 20px 48px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 9px 18px;
+      margin-bottom: 25px;
+      border: 1px solid rgba(228, 189, 120, 0.6);
+      border-radius: 30px;
+      color: var(--light-gold);
+      background: rgba(20, 17, 12, 0.48);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+    }
+
+    h1 {
+      margin-bottom: 15px;
+      color: var(--white);
+      font-size: clamp(30px, 6vw, 62px);
+      line-height: 1.35;
+      font-weight: 900;
+      text-shadow: 0 3px 20px rgba(0, 0, 0, 0.65);
+    }
+
+    h1 span {
+      color: var(--gold);
+    }
+
+    .subtitle {
+      max-width: 620px;
+      margin: 0 auto 30px;
+      color: #f2eadc;
+      font-size: clamp(15px, 2.3vw, 20px);
+      line-height: 1.9;
+    }
+
+    .offer-card {
+      width: 100%;
+      max-width: 490px;
+      margin: 0 auto;
+      padding: 30px 24px;
+      border: 1px solid rgba(228, 189, 120, 0.68);
+      border-radius: 22px;
+      background: linear-gradient(
+        145deg,
+        rgba(30, 26, 20, 0.92),
+        rgba(12, 11, 9, 0.94)
+      );
+      box-shadow:
+        0 18px 60px rgba(0, 0, 0, 0.45),
+        inset 0 0 28px rgba(228, 189, 120, 0.045);
+      backdrop-filter: blur(8px);
+    }
+
+    .offer-label {
+      margin-bottom: 6px;
+      color: #e9d9bb;
+      font-size: 16px;
+    }
+
+    .discount {
+      color: var(--gold);
+      font-size: clamp(64px, 11vw, 100px);
+      line-height: 1.2;
+      font-weight: 900;
+      text-shadow: 0 0 32px rgba(228, 189, 120, 0.14);
+    }
+
+    .discount small {
+      font-size: 0.39em;
+      white-space: nowrap;
+    }
+
+    .minimum {
+      margin: 7px 0 24px;
+      color: #f7f0e4;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .coupon-label {
+      margin-bottom: 10px;
+      color: #d8c9ae;
+      font-size: 13px;
+    }
+
+    .coupon-code {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 15px 18px;
+      border: 1px dashed var(--gold);
+      border-radius: 12px;
+      background: rgba(228, 189, 120, 0.075);
+    }
+
+    .code {
+      direction: ltr;
+      color: var(--light-gold);
+      font-family: Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 900;
+      letter-spacing: 5px;
+    }
+
+    .code-hint {
+      color: #c7b89c;
+      font-size: 11px;
+    }
+
+    .timer-section {
+      margin: 24px 0 22px;
+    }
+
+    .timer-title {
+      margin-bottom: 13px;
+      color: #f0e5d1;
+      font-size: 13px;
+    }
+
+    .timer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      direction: ltr;
+    }
+
+    .time-unit {
+      min-width: 68px;
+      padding: 11px 7px;
+      border: 1px solid rgba(228, 189, 120, 0.27);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .time-number {
+      color: var(--light-gold);
+      font-family: Arial, sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .time-label {
+      margin-top: 5px;
+      color: #cbbda5;
+      font-size: 11px;
+    }
+
+    .separator {
+      margin-top: -15px;
+      color: var(--gold);
+      font-size: 25px;
+      font-weight: 700;
+    }
+
+    .cta {
+      display: flex;
+      width: 100%;
+      min-height: 58px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 12px;
+      color: #1a140b;
+      background: linear-gradient(135deg, #f5dfae, #d5a65b);
+      box-shadow: 0 7px 24px rgba(209, 163, 87, 0.19);
+      font-family: inherit;
+      font-size: 17px;
+      font-weight: 900;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(209, 163, 87, 0.3);
+    }
+
+    .cta:active {
+      transform: scale(0.99);
+    }
+
+    .cta:focus-visible {
+      outline: 3px solid white;
+      outline-offset: 4px;
+    }
+
+    .notice {
+      min-height: 20px;
+      margin-top: 13px;
+      color: #e5d4b5;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .trust-note {
+      max-width: 440px;
+      margin: 21px auto 0;
+      color: #e4d9c7;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .footer {
+      padding: 18px 15px 22px;
+      color: #c8bda9;
+      background: rgba(0, 0, 0, 0.25);
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .footer a {
+      color: var(--light-gold);
+      text-decoration: none;
+    }
+
+    @media (min-width: 768px) {
+      .main {
+        padding-top: 50px;
+        padding-bottom: 60px;
+      }
+
+      .offer-card {
+        padding: 36px 38px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .main {
+        padding: 28px 14px 35px;
+      }
+
+      .offer-card {
+        padding: 25px 17px;
+        border-radius: 17px;
+      }
+
+      .time-unit {
+        min-width: 59px;
+      }
+
+      .time-number {
+        font-size: 25px;
+      }
+
+      .coupon-code {
+        padding: 13px;
+      }
+
+      .code {
+        font-size: 28px;
+      }
+
+      .cta {
+        font-size: 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div>
+        <div class="brand">الماجد للعود</div>
+        <div class="brand-subtitle">ALMAJED OUD</div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="eyebrow">عرض خاص لمحبي العطور الفاخرة</div>
+
+      <h1>
+        لمسة فخامة<br />
+        <span>وخصم مميز لك</span>
+      </h1>
+
+      <p class="subtitle">
+        اكتشف عطورك المفضلة واستمتع بخصم 30 ريال
+        عند التسوق بقيمة 300 ريال أو أكثر.
+      </p>
+
+      <section class="offer-card" aria-label="تفاصيل كوبون الخصم">
+        <p class="offer-label">وفّر مع كود الخصم</p>
+
+        <div class="discount">
+          30 <small>ريال</small>
+        </div>
+
+        <p class="minimum">
+          خصم على الطلبات بقيمة 300 ريال أو أكثر
+        </p>
+
+        <p class="coupon-label">انسخ الكود واستخدمه عند التسوق</p>
+
+        <div class="coupon-code">
+          <span class="code" id="couponCode">DX8</span>
+          <span class="code-hint">كود الخصم</span>
+        </div>
+
+        <div class="timer-section">
+          <p class="timer-title">الوقت المتبقي في جلسة العرض</p>
+
+          <div class="timer" role="timer" aria-live="off">
+            <div class="time-unit">
+              <div class="time-number" id="hours">02</div>
+              <div class="time-label">ساعة</div>
+            </div>
+
+            <span class="separator">:</span>
+
+            <div class="time-unit">
+              <div class="time-number" id="minutes">00</div>
+              <div class="time-label">دقيقة</div>
+            </div>
+
+            <span class="separator">:</span>
+
+            <div class="time-unit">
+              <div class="time-number" id="seconds">00</div>
+              <div class="time-label">ثانية</div>
+            </div>
+          </div>
+        </div>
+
+        <button class="cta" id="copyGoButton" type="button">
+          <span id="buttonText">انسخ الكود وتسوّق الآن</span>
+          <span aria-hidden="true">←</span>
+        </button>
+
+        <p class="notice" id="notice" role="status" aria-live="polite"></p>
+
+        <p class="trust-note">
+          انسخ الكود ثم انتقل إلى موقع الماجد للعود لإتمام تسوقك.
+          يُرجى التأكد من شروط العرض وتطبيق الكود عند إتمام الطلب.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      هذا الموقع مملوك لشركة MediaMudra
+      <br />
+      This Website is Owned by MediaMudra
+    </footer>
+  </div>
+
+  <script>
+    "use strict";
+
+    const COUPON_CODE = "DX8";
+    const DESTINATION_URL = "https://global.almajed4oud.com/en";
+    const TIMER_DURATION_MS = 2 * 60 * 60 * 1000;
+    const TIMER_STORAGE_KEY = "almajed_dx8_session_end_v1";
+
+    const hoursElement = document.getElementById("hours");
+    const minutesElement = document.getElementById("minutes");
+    const secondsElement = document.getElementById("seconds");
+    const button = document.getElementById("copyGoButton");
+    const buttonText = document.getElementById("buttonText");
+    const notice = document.getElementById("notice");
+
+    function getSessionEnd() {
+      try {
+        let endTime = Number(localStorage.getItem(TIMER_STORAGE_KEY));
+
+        if (!Number.isFinite(endTime) || endTime <= Date.now()) {
+          endTime = Date.now() + TIMER_DURATION_MS;
+          localStorage.setItem(TIMER_STORAGE_KEY, String(endTime));
+        }
+
+        return endTime;
+      } catch (error) {
+        // If browser storage is unavailable, use a session-only fallback.
+        if (!window.sessionEndFallback) {
+          window.sessionEndFallback = Date.now() + TIMER_DURATION_MS;
+        }
+        return window.sessionEndFallback;
+      }
+    }
+
+    let sessionEnd = getSessionEnd();
+
+    function updateTimer() {
+      let remaining = Math.max(0, sessionEnd - Date.now());
+
+      if (remaining <= 0) {
+        // Start a new display session; this is not an offer-expiry signal.
+        sessionEnd = Date.now() + TIMER_DURATION_MS;
+
+        try {
+          localStorage.setItem(TIMER_STORAGE_KEY, String(sessionEnd));
+        } catch (error) {
+          window.sessionEndFallback = sessionEnd;
+        }
+
+        remaining = TIMER_DURATION_MS;
+      }
+
+      const totalSeconds = Math.floor(remaining / 1000);
+      const hours = Math.floor(totalSeconds / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      hoursElement.textContent = String(hours).padStart(2, "0");
+      minutesElement.textContent = String(minutes).padStart(2, "0");
+      secondsElement.textContent = String(seconds).padStart(2, "0");
+    }
+
+    async function copyCoupon() {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(COUPON_CODE);
+        return true;
+      }
+
+      // Fallback for browsers that do not support Clipboard API.
+      const textArea = document.createElement("textarea");
+      textArea.value = COUPON_CODE;
+      textArea.setAttribute("readonly", "");
+      textArea.style.position = "fixed";
+      textArea.style.opacity = "0";
+      document.body.appendChild(textArea);
+      textArea.select();
+
+      let copied = false;
+
+      try {
+        copied = document.execCommand("copy");
+      } finally {
+        textArea.remove();
+      }
+
+      return copied;
+    }
+
+    button.addEventListener("click", async function () {
+      button.disabled = true;
+      buttonText.textContent = "جارٍ تجهيز الكود...";
+
+      let copied = false;
+
+      try {
+        copied = await copyCoupon();
+      } catch (error) {
+        copied = false;
+      }
+
+      if (copied) {
+        notice.textContent = "تم نسخ الكود DX8. جارٍ فتح موقع الماجد للعود...";
+      } else {
+        notice.textContent =
+          "قد يتعذر النسخ تلقائياً. استخدم الكود DX8 عند التسوق.";
+      }
+
+      // Continue to the merchant whether clipboard access succeeds or not.
+      window.location.assign(DESTINATION_URL);
+    });
+
+    updateTimer();
+    window.setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>
+```
