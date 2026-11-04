@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#160e13">
 
-  <title>دار الأميرات | خصم 3% باستخدام كود LM77</title>
-  <meta name="description" content="تسوقي من دار الأميرات واستخدمي كود LM77 للحصول على خصم 3%، وفق شروط المتجر.">
+  <title>دار الأميرات | خصم 3% باستخدام كود AR20</title>
+  <meta name="description" content="تسوقي من دار الأميرات واستخدمي كود AR20 للحصول على خصم 3%، وفق شروط المتجر.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -371,7 +371,7 @@
     <section class="coupon-panel" aria-label="كود الخصم">
       <p class="coupon-label">كود خصم دار الأميرات</p>
 
-      <div class="coupon-code" id="couponCode">LM77</div>
+      <div class="coupon-code" id="couponCode">AR20</div>
 
       <button class="cta-button" id="offerButton" type="button">
         نسخ الكود والذهاب إلى المتجر
@@ -389,13 +389,13 @@
   </main>
 
   <script>
-    const COUPON_CODE = "LM77";
+    const COUPON_CODE = "AR20";
     const STORE_URL = "https://daralamirat.com.sa/ar";
 
     // Display timer: two hours per browser.
     // Use a genuine campaign deadline if the offer has a fixed expiry.
     const TIMER_DURATION_MS = 2 * 60 * 60 * 1000;
-    const TIMER_STORAGE_KEY = "daralamirat_lm77_timer_end";
+    const TIMER_STORAGE_KEY = "daralamirat_AR20_timer_end";
 
     function getTimerEnd() {
       try {
@@ -484,8 +484,8 @@
         const copied = await copyCoupon();
 
         status.textContent = copied
-          ? "تم نسخ الكود LM77. جارٍ فتح المتجر..."
-          : "يمكنك نسخ الكود LM77 يدويًا. جارٍ فتح المتجر...";
+          ? "تم نسخ الكود AR20. جارٍ فتح المتجر..."
+          : "يمكنك نسخ الكود AR20 يدويًا. جارٍ فتح المتجر...";
 
         setTimeout(() => {
           window.location.href = STORE_URL;
