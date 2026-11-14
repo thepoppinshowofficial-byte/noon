@@ -1,0 +1,555 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#142d3a">
+
+  <title>عرض خاص | كود خصم AD8</title>
+  <meta name="description" content="استخدم كود AD8 واستمتع بخصم 17% على مشترياتك.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --blue: #a9dce5;
+      --light-blue: #e1f5f5;
+      --cream: #fffaf0;
+      --dark: #142d3a;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Tahoma, Arial, sans-serif;
+      color: var(--cream);
+      background: var(--dark);
+    }
+
+    .page {
+      position: relative;
+      isolation: isolate;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 15% 15%, rgba(169,220,229,.24), transparent 40%),
+        radial-gradient(ellipse at 85% 80%, rgba(91,163,178,.22), transparent 42%),
+        linear-gradient(140deg, #142d3a, #1e4855 55%, #102631);
+    }
+
+    .page::before,
+    .page::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      border: 1px solid rgba(225,245,245,.12);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .page::before {
+      width: 480px;
+      height: 480px;
+      top: -220px;
+      left: -150px;
+    }
+
+    .page::after {
+      width: 620px;
+      height: 620px;
+      bottom: -330px;
+      right: -230px;
+    }
+
+    .header {
+      text-align: center;
+      padding: 30px 18px 10px;
+    }
+
+    .brand {
+      color: white;
+      font-size: clamp(32px, 6vw, 53px);
+      font-weight: 900;
+      letter-spacing: 1px;
+      direction: ltr;
+      text-shadow: 0 3px 18px rgba(0,0,0,.3);
+    }
+
+    .brand-subtitle {
+      color: #d3eaf0;
+      font-size: 11px;
+      letter-spacing: 4px;
+      margin-top: 6px;
+      direction: ltr;
+    }
+
+    .main {
+      width: 100%;
+      max-width: 1050px;
+      margin: auto;
+      padding: 40px 20px 50px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-bottom: 25px;
+      border: 1px solid rgba(169,220,229,.6);
+      border-radius: 30px;
+      color: #e1f5f5;
+      background: rgba(255,255,255,.07);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    h1 {
+      color: white;
+      font-size: clamp(33px, 6vw, 62px);
+      font-weight: 900;
+      line-height: 1.4;
+      margin-bottom: 15px;
+      text-shadow: 0 3px 18px rgba(0,0,0,.35);
+    }
+
+    h1 span {
+      color: var(--blue);
+    }
+
+    .subtitle {
+      max-width: 620px;
+      margin: 0 auto 30px;
+      color: #e2f0f2;
+      font-size: clamp(15px, 2.3vw, 20px);
+      line-height: 1.9;
+    }
+
+    .offer-card {
+      width: 100%;
+      max-width: 490px;
+      margin: 0 auto;
+      padding: 32px 25px;
+      border: 1px solid rgba(169,220,229,.55);
+      border-radius: 24px;
+      background: rgba(15,38,49,.88);
+      box-shadow: 0 20px 65px rgba(0,0,0,.35);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .offer-label {
+      color: #d7ebee;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .discount {
+      color: var(--blue);
+      font-size: clamp(75px, 12vw, 110px);
+      font-weight: 900;
+      line-height: 1.2;
+      direction: ltr;
+      text-shadow: 0 0 35px rgba(169,220,229,.2);
+    }
+
+    .discount small {
+      font-size: .42em;
+    }
+
+    .offer-text {
+      color: #e5f1f2;
+      font-size: 16px;
+      line-height: 1.9;
+      margin: 10px 0 25px;
+    }
+
+    .coupon-label {
+      color: #c8e1e5;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .coupon-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 18px;
+      border: 1px dashed var(--blue);
+      border-radius: 13px;
+      background: rgba(169,220,229,.08);
+    }
+
+    .coupon-code {
+      direction: ltr;
+      color: #e1f5f5;
+      font-family: Arial, sans-serif;
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: 5px;
+    }
+
+    .coupon-hint {
+      color: #c5dce0;
+      font-size: 12px;
+    }
+
+    .timer-section {
+      margin: 25px 0;
+    }
+
+    .timer-title {
+      color: #dcebed;
+      font-size: 13px;
+      margin-bottom: 13px;
+    }
+
+    .timer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      direction: ltr;
+    }
+
+    .time-unit {
+      min-width: 68px;
+      padding: 11px 7px;
+      border: 1px solid rgba(169,220,229,.3);
+      border-radius: 10px;
+      background: rgba(255,255,255,.05);
+    }
+
+    .time-number {
+      color: #e1f5f5;
+      font-family: Arial, sans-serif;
+      font-size: 29px;
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .time-label {
+      color: #c5dce0;
+      font-size: 11px;
+      margin-top: 5px;
+    }
+
+    .separator {
+      color: var(--blue);
+      font-size: 25px;
+      margin-top: -15px;
+    }
+
+    .cta {
+      display: flex;
+      width: 100%;
+      min-height: 59px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 20px;
+      border: 0;
+      border-radius: 13px;
+      color: #102b35;
+      background: linear-gradient(135deg, #e1f5f5, #a9dce5);
+      font-family: inherit;
+      font-size: 17px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: .2s ease;
+      box-shadow: 0 8px 28px rgba(169,220,229,.18);
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(169,220,229,.3);
+    }
+
+    .cta:disabled {
+      opacity: .7;
+      cursor: wait;
+    }
+
+    .cta:focus-visible {
+      outline: 3px solid white;
+      outline-offset: 4px;
+    }
+
+    .notice {
+      min-height: 20px;
+      margin-top: 12px;
+      color: #d9eff1;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .terms {
+      max-width: 420px;
+      margin: 20px auto 0;
+      color: #bfd8dd;
+      font-size: 11px;
+      line-height: 1.9;
+    }
+
+    .footer {
+      padding: 20px 15px;
+      color: #bfd8dd;
+      background: rgba(0,0,0,.2);
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    @media (min-width: 768px) {
+      .main {
+        padding-top: 55px;
+        padding-bottom: 60px;
+      }
+
+      .offer-card {
+        padding: 38px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .main {
+        padding: 28px 14px 35px;
+      }
+
+      .offer-card {
+        padding: 25px 17px;
+      }
+
+      .time-unit {
+        min-width: 59px;
+      }
+
+      .time-number {
+        font-size: 25px;
+      }
+
+      .coupon-code {
+        font-size: 29px;
+      }
+
+      .cta {
+        font-size: 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="header">
+      <div class="brand">Baby Brezza</div>
+      <div class="brand-subtitle">SMART BABY PRODUCTS</div>
+    </header>
+
+    <main class="main">
+
+      <div class="badge">عرض خاص لدول الخليج</div>
+
+      <h1>
+        تسوق منتجاتك المفضلة<br>
+        <span>واستمتع بخصم 17%!</span>
+      </h1>
+
+      <p class="subtitle">
+        اكتشف منتجات مبتكرة تجعل حياة الوالدين أسهل.
+        استخدم كود الخصم واستمتع بتوفير مميز عند التسوق.
+      </p>
+
+      <section class="offer-card">
+
+        <p class="offer-label">عرض توفير خاص</p>
+
+        <div class="discount">
+          17<small>%</small>
+        </div>
+
+        <p class="offer-text">
+          احصل على خصم 17% على مشترياتك
+          عند استخدام كود الخصم AD8.
+        </p>
+
+        <p class="coupon-label">انسخ كود الخصم واستخدمه عند التسوق</p>
+
+        <div class="coupon-box">
+          <span class="coupon-code" id="couponCode">AD8</span>
+          <span class="coupon-hint">كود الخصم</span>
+        </div>
+
+        <div class="timer-section">
+          <p class="timer-title">الوقت المتبقي في جلسة العرض</p>
+
+          <div class="timer" role="timer" aria-live="off">
+            <div class="time-unit">
+              <div class="time-number" id="hours">02</div>
+              <div class="time-label">ساعة</div>
+            </div>
+
+            <span class="separator">:</span>
+
+            <div class="time-unit">
+              <div class="time-number" id="minutes">00</div>
+              <div class="time-label">دقيقة</div>
+            </div>
+
+            <span class="separator">:</span>
+
+            <div class="time-unit">
+              <div class="time-number" id="seconds">00</div>
+              <div class="time-label">ثانية</div>
+            </div>
+          </div>
+        </div>
+
+        <button class="cta" id="copyGoButton" type="button">
+          <span id="buttonText">انسخ الكود وتسوق الآن</span>
+          <span aria-hidden="true">←</span>
+        </button>
+
+        <p class="notice" id="notice" role="status" aria-live="polite"></p>
+
+        <p class="terms">
+          انسخ الكود ثم انتقل إلى المتجر لإتمام تسوقك.
+          يخضع الخصم لشروط وأحكام العرض وأهلية الطلب.
+        </p>
+
+      </section>
+    </main>
+
+    <footer class="footer">
+      This Website is Owned by MediaMudra
+    </footer>
+
+  </div>
+
+  <script>
+    "use strict";
+
+    const COUPON_CODE = "AD8";
+    const DESTINATION_URL = "https://babybrezza.me/";
+    const TIMER_DURATION = 2 * 60 * 60 * 1000;
+    const STORAGE_KEY = "babybrezza_ad8_session_end";
+
+    const hoursEl = document.getElementById("hours");
+    const minutesEl = document.getElementById("minutes");
+    const secondsEl = document.getElementById("seconds");
+    const button = document.getElementById("copyGoButton");
+    const buttonText = document.getElementById("buttonText");
+    const notice = document.getElementById("notice");
+
+    function getSessionEnd() {
+      try {
+        let endTime = Number(localStorage.getItem(STORAGE_KEY));
+
+        if (!Number.isFinite(endTime) || endTime <= Date.now()) {
+          endTime = Date.now() + TIMER_DURATION;
+          localStorage.setItem(STORAGE_KEY, String(endTime));
+        }
+
+        return endTime;
+      } catch (error) {
+        if (!window.babyBrezzaTimerFallback) {
+          window.babyBrezzaTimerFallback = Date.now() + TIMER_DURATION;
+        }
+
+        return window.babyBrezzaTimerFallback;
+      }
+    }
+
+    let sessionEnd = getSessionEnd();
+
+    function updateTimer() {
+      let remaining = Math.max(0, sessionEnd - Date.now());
+
+      if (remaining <= 0) {
+        sessionEnd = Date.now() + TIMER_DURATION;
+
+        try {
+          localStorage.setItem(STORAGE_KEY, String(sessionEnd));
+        } catch (error) {
+          window.babyBrezzaTimerFallback = sessionEnd;
+        }
+
+        remaining = TIMER_DURATION;
+      }
+
+      const totalSeconds = Math.floor(remaining / 1000);
+      const hours = Math.floor(totalSeconds / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      hoursEl.textContent = String(hours).padStart(2, "0");
+      minutesEl.textContent = String(minutes).padStart(2, "0");
+      secondsEl.textContent = String(seconds).padStart(2, "0");
+    }
+
+    async function copyCoupon() {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(COUPON_CODE);
+        return true;
+      }
+
+      const textArea = document.createElement("textarea");
+      textArea.value = COUPON_CODE;
+      textArea.setAttribute("readonly", "");
+      textArea.style.position = "fixed";
+      textArea.style.opacity = "0";
+
+      document.body.appendChild(textArea);
+      textArea.select();
+
+      let copied = false;
+
+      try {
+        copied = document.execCommand("copy");
+      } finally {
+        textArea.remove();
+      }
+
+      return copied;
+    }
+
+    button.addEventListener("click", async function () {
+      button.disabled = true;
+      buttonText.textContent = "جارٍ تجهيز الكود...";
+
+      let copied = false;
+
+      try {
+        copied = await copyCoupon();
+      } catch (error) {
+        copied = false;
+      }
+
+      if (copied) {
+        notice.textContent = "تم نسخ الكود AD8. جارٍ فتح المتجر...";
+      } else {
+        notice.textContent = "يرجى استخدام الكود AD8 عند التسوق.";
+      }
+
+      window.location.assign(DESTINATION_URL);
+    });
+
+    updateTimer();
+    window.setInterval(updateTimer, 1000);
+  </script>
+</body>
+</html>
+```
